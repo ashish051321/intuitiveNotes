@@ -5,6 +5,12 @@ body {
     background-color: #f4f4f9;
     color: #333;
   }
+
+  #toggle-dark-mode{
+    position:fixed;
+    bottom:50px;
+    right:50px;
+  }
   
   /* Fixed Header */
   #header {
@@ -15,7 +21,7 @@ body {
     background-color: #6c5ce7; /* Purple accent */
     color: white;
     text-align: center;
-    padding: 20px 10px;
+    padding: 10px 10px;
     font-size: 18px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;

@@ -11,8 +11,11 @@
   <!-- Fixed Header -->
   <header id="header">
     <h1>IntuitiveNotes</h1>
-    <p>Start typing for the search box to appear. Press <strong>Ctrl + Enter</strong> to save a note.</p>
-    <button id="toggle-dark-mode">🌙 Dark Mode</button>
+    <div class="typing-animation">
+      <div class="hand">⌨️</div> <!-- You can replace this with an image or SVG -->
+      <div class="text">Start typing to take notes...</div>
+    </div>
+    <p>Press <strong>Ctrl + Enter</strong> to save a note.</p>
   </header>
 
   <div id="app">
@@ -20,6 +23,9 @@
     <div id="notes-container"></div>
   </div>
 
+  <button id="toggle-dark-mode">🌙 Dark Mode</button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
   <script src="script.js"></script>
+  <script src="gsapScript.js"></script>
 </body>
 </html>
