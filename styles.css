@@ -1,0 +1,175 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  /* Fixed Header */
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #6c5ce7; /* Purple accent */
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  #header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  
+  #header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #e0e0e0;
+  }
+  
+  /* Keyboard key styling */
+  .key {
+    display: inline-block;
+    background: #444;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 3px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: monospace;
+    border: 1px solid #666;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+  }
+  
+  /* Main app container */
+  #app {
+    max-width: 600px;
+    margin: 120px auto 20px; /* Adjusted for fixed header */
+    padding: 20px;
+  }
+  
+  /* Search box */
+  #search-box {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: none; /* Hidden initially */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #search-box:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
+    outline: none;
+  }
+  
+  /* Notes container */
+  #notes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Note card styling */
+  .note-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Note actions (edit and delete icons) */
+  .note-actions {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .edit-icon, .delete-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #6c5ce7;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .edit-icon:hover {
+    color: #4a3fcf; /* Darker purple */
+    transform: scale(1.1);
+  }
+  
+  .delete-icon:hover {
+    color: #ff4757; /* Red for delete */
+    transform: scale(1.1);
+  }
+  
+  /* Dark mode styles */
+  .dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .dark-mode .note-card, .dark-mode #todo-container {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+  }
+  
+  .dark-mode .note-card p {
+    color: #ddd;
+  }
+  
+  .dark-mode button {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+  }
+  
+  /* Dark Mode for header */
+  .dark-mode #header {
+    background-color: #222;
+    color: #ddd;
+  }
+  
+  /* Dark mode effect for input box */
+  .dark-mode #search-box {
+    background-color: #333;
+    border: 1px solid #777;
+    color:white;
+  }
+  
+  .dark-mode #search-box:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+  }
+  
+  /* Animation for new notes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
