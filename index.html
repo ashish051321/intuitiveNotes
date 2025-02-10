@@ -29,3 +29,56 @@
   <script src="gsapScript.js"></script>
 </body>
 </html>
+
+<!-- 
+    <button onclick="syncToGitHub()">Sync to GitHub</button>
+
+        const repo = "your-repo-name"; // Replace with your GitHub repo
+        const owner = "your-username"; // Replace with your GitHub username
+        const token = "ghp_yourPersonalAccessToken"; // Replace with your actual token (DO NOT EXPOSE IN FRONTEND)
+
+
+        async function syncToGitHub() {
+            const note = document.getElementById("noteContent").value;
+            const filename = "notes.txt"; // Store notes in this file in the GitHub repo
+
+            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filename}`;
+
+            // Fetch current file SHA if it exists
+            let sha = null;
+            try {
+                const res = await fetch(apiUrl, { headers: { Authorization: `token ${token}` } });
+                if (res.ok) {
+                    const data = await res.json();
+                    sha = data.sha;
+                }
+            } catch (err) {
+                console.error("Error fetching file SHA:", err);
+            }
+
+            // Prepare payload
+            const payload = {
+                message: "Updating notes",
+                content: btoa(unescape(encodeURIComponent(note))), // Convert to Base64
+                sha: sha // Include SHA if file exists
+            };
+
+            // Make API request to GitHub
+            fetch(apiUrl, {
+                method: "PUT",
+                headers: {
+                    "Authorization": `token ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("status").innerText = "Synced to GitHub!";
+            })
+            .catch(error => {
+                console.error("Error syncing to GitHub:", error);
+                document.getElementById("status").innerText = "Error syncing!";
+            });
+        }
+-->
