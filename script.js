@@ -1,3 +1,18 @@
+let lastTap = 0;
+
+document.addEventListener("touchstart", function (event) {
+    let currentTime = new Date().getTime();
+    let tapLength = currentTime - lastTap;
+
+    if (tapLength < 300 && tapLength > 0) {
+        alert("Double Tap Detected!");
+        // Perform your action here
+    }
+
+    lastTap = currentTime;
+});
+
+
 // Generate a unique ID for each note
 function generateID() {
     return 'note-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
